@@ -13,13 +13,13 @@ jobs:
           command: |
             sudo rm /var/lib/dpkg/lock
             sudo dpkg --configure -a
-            sudo apt-get install software-properties-common
-            sudo add-apt-repository ppa:fkrull/deadsnakes
-            sudo apt-get update
+            sudo apt-get install software-properties-common -y
+            #sudo add-apt-repository ppa:fkrull/deadsnakes -y
+            sudo apt-get update -y
             sleep 5
             sudo rm /var/lib/dpkg/lock
             sudo dpkg --configure -a
-            sudo apt-get install python3.5
+            sudo apt-get install python3.5 -y
             sleep 5
             python -m pip install -r requirements.txt
         
