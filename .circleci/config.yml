@@ -70,18 +70,18 @@ workflows:
           context: DOCKERHUB
           filters:
             branches:
-              only: dev        
+              only: master        
       - build:
           context: DOCKERHUB 
           requires:
             - test
           filters:
             branches:
-              only: dev
+              only: master
       - push:
           context: DOCKERHUB
           requires:
             - build
           filters:
             branches:
-              only: dev
+              only: master
